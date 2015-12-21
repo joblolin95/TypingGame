@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TypingGame
 {
@@ -14,13 +10,13 @@ namespace TypingGame
             string response = "y";
             while (response.Equals("Y") || response.Equals("y"))
             {
-                Console.Clear();
                 TypingGame type = new TypingGame();
 
                 
                 type.displayIntro();
                 type.displayMenu();
-                
+
+                Console.Clear();
                 Console.WriteLine("Ready ...");
                 Console.ReadKey();
                 Console.WriteLine("\nSet ...");
@@ -29,8 +25,6 @@ namespace TypingGame
 
                 while (!type.isTimeUp())
                 {
-
-
                     type.displayWord();
                     type.getWord();
                 }// end while
@@ -41,8 +35,10 @@ namespace TypingGame
                 Console.Write("\nPlay Again (Y / N)? ");
                 response = Console.ReadLine();
                 Console.WriteLine();
+				Console.Clear();
             }// end outer while            
             Console.ReadKey();
+			
 
 
         }// end main

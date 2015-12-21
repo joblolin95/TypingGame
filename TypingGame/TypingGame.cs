@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics;
 
@@ -116,14 +112,7 @@ namespace TypingGame
 
         public bool isTimeUp()
         {
-            if (timeTaken >= duration)
-            {
-                return true;
-            }// end if
-            else
-            {
-                return false;
-            }// end else
+            return timeTaken >= duration;
         }// end method
 
 
@@ -152,7 +141,6 @@ namespace TypingGame
             while (duration != 1 && duration != 2 && duration != 3)
             {
                 Console.Write("\nPlease Enter A Valid Game Mode: ");
-                
                 duration = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
             }// end while
@@ -184,11 +172,9 @@ namespace TypingGame
 
             while(dLength != 1 && dLength != 2 && dLength != 3)
             {
-
                 Console.Write("Please Enter A Valid Game Difficulty: ");
                 dLength = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
-
             }// end while
 
             if(dLength == 1)
@@ -212,11 +198,11 @@ namespace TypingGame
 
         public void displayOutcome()
         {
-            if(wpm < 20)
+            if(wpm < 25)
             {
                 Console.WriteLine("Oh no! Dr. Nefarious escaped on his Evil-Copter!! The world is doomed!");
             }// end if
-            else if(wpm >= 20 && wpm < 40)
+            else if(wpm >= 25 && wpm < 40)
             {
                 Console.WriteLine("Whew. You tripped Dr. Nefarious juuuuuust as he was boarding his Evil-Copter. Threat averted. The world is safe again.");
             }// end else if
@@ -232,7 +218,7 @@ namespace TypingGame
             Console.WriteLine("\t\tHero Typing Game\n");
             Console.WriteLine("You must hurry, Agent!  Dr. Nefarious has stolen a powerful nuclear weapon, and is rushing to his Evil-Copter to unleash the weapon's power upon the world!");
             Console.WriteLine("\nYou must use your masterful typing skills to catch him before he escapes or we're all doomed!");
-            Console.WriteLine("\nSimply retype the words before you, and get a score good enough to catch the evil madman!");
+            Console.WriteLine("\nSimply retype the words before you, and get a score good enough to catch the evil madman.");
             Console.WriteLine("\nGood luck, Agent, and remember - we're all counting on you.\n");
 
         }// end displayIntro
